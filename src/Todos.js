@@ -2,10 +2,12 @@ import React from 'react'
 
 const Todos = ({todos,deleteTodo}) => {
     const todoList = todos.length ? ( //if yes
-        todos.map(todo => {
+        todos.map((todo,index) => {
             return(
-                <div className="collection-item" key={todo.id}>
-                    <span onClick={() => {deleteTodo(todo.id)}}> {todo.content}</span>
+                <div className="collection-item" key={index}>
+                    <span onClick={() => {
+                        deleteTodo(todo.id)
+                        }}> {todo.content}</span>
                 </div>
             );
         })
@@ -19,7 +21,6 @@ const Todos = ({todos,deleteTodo}) => {
         <div className="todos collection">
             {todoList}
         </div>
-
     );
 }
 export default Todos; //export so it can be used later in the app

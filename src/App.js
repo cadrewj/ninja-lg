@@ -3,6 +3,7 @@ import logo from './logo.jpg';
 import './App.css';
 import './Todos';
 import Todos from './Todos';
+import AddTodo from './AddTodo';
 
 class App extends Component {
   state={ //this the content templete of the content you want to put on the page
@@ -17,10 +18,19 @@ class App extends Component {
     });
     this.setState({
       todos
-    })
-
-    
+    })  
     console.log(id);
+  }
+  addTodo = (todo) =>{
+    var num = this.state.todos.length;
+    todo.id = num++;
+    let todos = [...this.state.todos,todo];
+  
+    this.setState({
+      todos: todos
+    })
+    console.log(todo.id);
+
   }
   render() {
     return (
@@ -32,7 +42,10 @@ class App extends Component {
         </header>
         <div className="todo-app container">{/* "container" is used to put the padding around thee app*/ }
           <h1 className="center blue-text">Todo's</h1>
+          {/*Place the todo list on the DOM*/}
           <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
+           {/*Place the add new todo on the DOM*/}
+          <AddTodo addTodo={this.addTodo}/>
         </div>
       </div>
     );
