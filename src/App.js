@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.jpg';
+import logo from './logo.png';
 import './App.css';
 import NavBar from './components/NavBar';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -8,6 +8,7 @@ import Home from './components/Home';
 import About from './components/About';
 import SignUp from './components/SignUp';
 import NewApps from './components/NewApps';
+
 class App extends Component {
   render() {
     return (
@@ -17,13 +18,17 @@ class App extends Component {
               <img src={logo} className="App-logo" alt="logo" />
             <h2 className="Brand">NinjaTech LG</h2>
           </header>
-          <NavBar/>
-          <Route path='/' component={Home}/>
+          <NavBar />
+         
+          
+          <Route exact path='/' component={Home}/>{/*use exact path to ensure that the home page doesnt load on all pages*/}
           <Route path='/about' component={About}/>
           <Route path='/signup' component={SignUp}/>
           <Route path='/apps' component={NewApps}/>
+          
         </div>
       </BrowserRouter>
+      
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Rainbow from '../hoc/Rainbow';
 const About = () =>{
     return(
         <div className="container">{/*container centralise the page*/}
@@ -10,4 +10,4 @@ const About = () =>{
     );
 }
 
-export default About;
+export default Rainbow (About);

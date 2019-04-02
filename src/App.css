@@ -7,6 +7,12 @@
   height: 20vmin;
   pointer-events: none;
 }
+.brand2 img{
+  height: 10vmin;
+}
+.nav-mobile NavLink{
+  @extend .blue-text, .text-lighten-1;
+}
 
 .App-header {
   background-color: #282c34;
@@ -16,10 +22,10 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #bbdefb;
 }
 
-.App-link {
+.App-link{
   color: #61dafb;
 }
 
