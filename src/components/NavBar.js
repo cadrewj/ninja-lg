@@ -1,5 +1,4 @@
 import React from 'react';
-// import man from './man.png';
 import {NavLink, withRouter} from 'react-router-dom'; 
 
 const man = require('../man.png')
@@ -8,7 +7,7 @@ const NavBar = (props) =>{
     console.log(props);
     return(
         <nav className="nav-wrapper grey darken-3">
-           <i className="brand2 left"><img src={man}/></i>
+           <i className="brand2 left"><img src={man} alt=""/></i>
             <div className="App-link right med-and-down"> 
                 <ul>{/*used to position the content on the right using materialized css*/}
                     <li><NavLink to="/">Home</NavLink></li>{/*using link stop the router from making a request to server and let react handle the link instead*/}
