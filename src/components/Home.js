@@ -1,9 +1,9 @@
 import React, {Component}from 'react'
 import axios from 'axios'
-
+import {Link} from 'react-router-dom'
 //functional components cant use lifecycle hoc so you need to use a class component
 class Home extends Component{
-    state={ // create an empy state to store the info
+    state = { // create an empy state to store the info
         posts:[]
     }
     componentDidMount(){ //used to get info from component
@@ -11,18 +11,20 @@ class Home extends Component{
         .then(res =>{ //.then tell react what to do after u git that data
             console.log(res);
             this.setState({
-                posts:res.data.slice(0,10) //used slice to limit the grabbed content
+                posts: res.data.slice(0,10) //used slice to limit the grabbed content
             });
         });
     }
     render(){
-        const {posts}=this.state;
+        const {posts} = this.state; //this is used to see if the info exist already before trying to 
         const postList = posts.length ? (
         posts.map(post =>{
                 return(
-                    <div className="post card" key={post.id}>
+                    <div className="post card" key= {post.id}>
                         <div className="card-content">
-                            <span className="card-title">{post.title}</span>
+                            <Link to= {'/' +post.id}>
+                                <span className="card-title">{post.title}</span>
+                            </Link>
                             <p>{post.body}</p>
                         </div>
                     </div>
