@@ -1,6 +1,7 @@
 import React, {Component}from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import logo2 from '../logo2.png'
 //functional components cant use lifecycle hoc so you need to use a class component
 class Home extends Component{
     state = { // create an empy state to store the info
@@ -21,6 +22,7 @@ class Home extends Component{
         posts.map(post =>{
                 return(
                     <div className="post card" key= {post.id}>
+                        <img src={logo2} alt="logo2"/>
                         <div className="card-content">
                             <Link to= {'/' +post.id}>
                                 <span className="card-title">{post.title}</span>
@@ -35,7 +37,7 @@ class Home extends Component{
             <div className="center">no posts yet</div>
         );
         return(
-            <div className="">{/*container centralise the page*/}
+            <div className="home">{/*container centralise the page*/}
                 <h4 className="center">Home</h4>{/*center centralises the text*/}
                 {postList}
             </div>

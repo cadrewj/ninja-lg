@@ -10,6 +10,21 @@
 .brand2 img{
   height: 10vmin;
 }
+.home .post img{ 
+  position: absolute;
+  top: 20px;
+  left: -100px;
+  opacity: 0.6;
+  min-height: 30vh;
+
+}
+.home .post{
+  overflow: hidden;
+  padding-left: 80px;
+}
+.App .nav-wrapper img{
+  position: absolute;
+}
 
 .App-header {
   background-color: #282c34;

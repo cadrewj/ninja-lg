@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavLink, withRouter} from 'react-router-dom'; 
-
-const man = require('../man.png')
+const man = require('../man.png');
 
 const NavBar = (props) =>{
     console.log(props);
